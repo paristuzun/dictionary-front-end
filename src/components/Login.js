@@ -13,8 +13,8 @@ class Login extends Component {
     login(this.state)
     .then(payload => {
       localStorage.setItem("token", payload.token)
-      localStorage.setItem("name", payload.name)
-      this.props.updateUser(payload.name)
+      localStorage.setItem("user", payload.user)
+      this.props.updateUser(payload.user)
       this.props.history.push("/")
     })
   }
