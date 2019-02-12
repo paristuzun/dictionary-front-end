@@ -13,8 +13,13 @@ class TopicForm extends React.Component {
       headers: {
         "Content-Type": "application/json",
         "Access-Token": localStorage.getItem("token")
+
       },
-      body: JSON.stringify(this.state)
+      // body: JSON.stringify(this.state)
+      body: JSON.stringify({
+        title: this.state.title.trim(),
+        entry: this.state.entry.trim()
+      })
     }).then(res => res.json())
     .then(topic => this.props.addTopic(topic))
   }

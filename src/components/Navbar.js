@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
 
+   const loggedIn = localStorage.token ? true : false;
+
   return (
     <div id="top-navigation" itemType="http://schema.org/SiteNavigationElement">
-    { props.user ?
+    { loggedIn ?
 
       <a href="/" className="item" onClick={props.logout}>Logout</a> :
       <Link to="/login" className="item">

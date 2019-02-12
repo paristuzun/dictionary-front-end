@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 class App extends Component {
 
   state = {
-    user: localStorage.getItem("name")
+    user: localStorage.getItem("username")
   }
 
   updateUser = (user) => {
@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div id="shaked-canvas-div">
 
-      <Header />
+      <Header logout={this.logout} />
       <Switch>
       <Route path="/Contact" component={Contact} />
         <Route path="/signup" component={SignUp} />

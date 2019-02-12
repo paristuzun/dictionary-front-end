@@ -23,7 +23,7 @@ render = () => {
        <a href="/">Dictionary</a>
       </div>
     <Search />
-    <Navbar />
+    <Navbar logout={this.props.logout}/>
      <CategoryList
        width="five"
        categories={this.state.categories}

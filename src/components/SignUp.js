@@ -13,7 +13,7 @@ class SignUp extends Component {
     createUser(this.state)
     .then(payload => {
       localStorage.setItem("token", payload.token)
-      localStorage.setItem("name", payload.username)
+      localStorage.setItem("username", payload.username)
       this.props.history.push("/")
     })
   }

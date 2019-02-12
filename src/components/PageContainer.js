@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TopicList from './TopicList';
 import TopicSpecs from './TopicSpecs'
 import TopicContainer from './TopicContainer'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import TopicForm from './TopicForm'
 import TopicCard from './TopicCard'
 import { getTopics } from '../services/Backend'
@@ -37,6 +37,7 @@ export default class PageContainer extends Component {
 
 	render = () => {
     return (
+			<Router>
       <div className="container">
 			<Route
 					exact
@@ -48,9 +49,20 @@ export default class PageContainer extends Component {
 					 />
 					)}
 				/>
-				<TopicContainer
-					topics={this.state.topics}
-										/>
+
+				<Route
+						exact
+						path="/"
+						render={() => (
+						<TopicContainer
+							topics={this.state.topics}
+
+						 />
+						)}
+					/>
+
+
+
 
 			<Route
 					exact
@@ -75,6 +87,7 @@ export default class PageContainer extends Component {
 
 
 </div>
+</Router>
 
     )
   }
