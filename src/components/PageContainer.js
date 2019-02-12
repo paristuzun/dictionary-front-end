@@ -11,7 +11,8 @@ export default class PageContainer extends Component {
 
 	state = {
 		categories: [],
-    topics: []
+    topics: [],
+		entries: []
   }
 
 	componentDidMount() {
@@ -61,26 +62,27 @@ export default class PageContainer extends Component {
 						)}
 					/>
 
-
-
-
-			<Route
-					exact
-					path="/topics/:id"
-					render={renderProps => (
-						<TopicSpecs
-							{...renderProps}
-
-										/>
-									)}
-								/>
-
 								<Switch>
+
+
+
 				          <Route path="/topics/new" render={() => (
 				            localStorage.getItem("username") ? (
 				              <TopicForm addTopic={this.addTopic} />
 				            ) : <Redirect to="/login" />
 				          )} />
+
+
+									<Route
+											exact
+											path="/topics/:id"
+											render={renderProps => (
+												<TopicSpecs
+													{...renderProps}
+
+																/>
+															)}
+														/>
 
 				        </Switch>
 
@@ -92,26 +94,3 @@ export default class PageContainer extends Component {
     )
   }
 }
-
-// return (
-// 	<div className="ui grid container">
-// 		<DogList
-// 			width="six"
-// 			dogs={this.state.dogs}
-// 			selectDog={this.selectDog}
-// 			toggleForm={this.showForm}
-// 		/>
-// 		<Switch>
-// 			<Route path="/dogs/new" render={() => (
-// 				localStorage.getItem("name") ? (
-// 					<DogForm addDog={this.addDog} />
-// 				) : <Redirect to="/login" />
-// 			)} />
-// 			<Route path="/dogs/:id" render={({ match }) => {
-// 				let dogId = parseInt(match.params.id)
-// 				let dog = this.state.dogs.find(dog => dog.id === dogId)
-// 				return dog ? <DogDetail width="ten" dog={dog} /> : null;
-// 			}} />
-// 		</Switch>
-// 	</div>
-// )

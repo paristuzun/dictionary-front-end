@@ -5,8 +5,7 @@ import EntryForm from './EntryForm'
 export default class TopicSpecs extends Component {
 	state = {
 		id: '',
-		title: '',
-		entries: [],
+		title: ''
 	};
 
 	componentDidMount() {
