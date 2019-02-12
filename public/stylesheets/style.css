@@ -1509,7 +1509,8 @@ select,
 textarea {
     color: #fff;
     background-color: #464646;
-    font-family: 'Source Sans Pro', sans-serif
+    font-family: 'Source Sans Pro', sans-serif;
+    max-width: 600px;
 }
 
 form>div,

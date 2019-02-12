@@ -3,7 +3,8 @@ import React from 'react';
 class TopicForm extends React.Component {
   state = {
   title: '',
-  entry: ''
+  entry: '',
+  category_id: [],
   }
 
   saveTopic = (event) => {
@@ -15,13 +16,14 @@ class TopicForm extends React.Component {
         "Access-Token": localStorage.getItem("token")
 
       },
-      // body: JSON.stringify(this.state)
-      body: JSON.stringify({
-        title: this.state.title.trim(),
-        entry: this.state.entry.trim()
-      })
+      body: JSON.stringify(this.state)
+      // body: JSON.stringify({
+      //   title: this.state.title.trim(),
+      //   entry: this.state.entry.trim()
+      // })
     }).then(res => res.json())
     .then(topic => this.props.addTopic(topic))
+
   }
 
   render = () =>
@@ -31,11 +33,7 @@ class TopicForm extends React.Component {
         <input type="text" name="title" placeholder="Topic title"
           onChange={(e) => this.setState({ title: e.target.value })} />
       </div>
-      <div class="field">
-        <label>Entry</label>
-        <input type="text" name="entry" placeholder="Entry"
-          onChange={(e) => this.setState({ entry: e.target.value })} />
-      </div>
+
       <button className="button" type="submit">Submit</button>
 
     </form>

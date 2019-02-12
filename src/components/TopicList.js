@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TopicListItem from './TopicListItem';
-import TopicCard from './TopicCard';
 
 
   export default class TopicList extends Component {

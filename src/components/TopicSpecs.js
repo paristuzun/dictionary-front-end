@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Entry from './Entry'
+import EntryForm from './EntryForm'
 
 export default class TopicSpecs extends Component {
 	state = {
@@ -27,6 +28,11 @@ export default class TopicSpecs extends Component {
 		return this.state.entries.map(e => <Entry key={e.id} entry={e} />);
 	}
 
+	addEntry = (entry) => {
+    let newEntry = this.state.entries.concat(entry)
+    this.setState({ entries: newEntry })
+  }
+
 	favIconClass = () =>
 		this.state.fav
 			? 'right floated like icon active'
@@ -49,6 +55,7 @@ export default class TopicSpecs extends Component {
 
 					</div>
 				</div>
+				<EntryForm addEntry={this.addEntry} topicId={this.state.id} />
 				</div>
 		);
 	}
