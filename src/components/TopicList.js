@@ -5,9 +5,6 @@ import TopicCard from './TopicCard';
 
 
   export default class TopicList extends Component {
-  	generateCards() {
-  		return this.props.topics.map(t => <TopicCard key={t.id} topic={t} />);
-  	}
 
     generateTopics() {
       return this.props.topics.map(x => <TopicListItem key={x.id} topic={x} />);
@@ -15,20 +12,24 @@ import TopicCard from './TopicCard';
 
   	render() {
 
-  		return <div className="ui cards">
-      <div className={`ui card wide column`}>
-          Topic List
+  		return <div id="index-section" className="main-left-frame">
+       <nav id="partial-index" itemType="http://schema.org/SiteNavigationElement">
+       <div className="clearfix dropdown ">
+         <h2 title="topics">today</h2>
+       </div>
+       <div id="feed-info">
+         <div id="feed-refresh-link" className="more-data">
           <span to="/topics/new" className="item">
-            <div className="content">
-              <Link to="/topics/new" className="header">
-                Contribute
-              </Link>
-            </div>
-          </span>
-            <div className="ui list">
-{this.generateTopics()}
-            </div>
-          </div>
-      {this.generateCards()}</div>;
+            <Link to="/topics/new" className="header">
+              Contribute +
+           </Link>
+         </span>
+         </div>
+       </div>
+       <ul className="topic-list partial">
+          {this.generateTopics()}
+        </ul>
+        </nav>
+      </div>;
   	}
   }

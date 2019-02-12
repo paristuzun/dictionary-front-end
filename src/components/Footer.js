@@ -4,16 +4,15 @@ import { Link } from 'react-router-dom';
 const Footer = (props) => {
 
   return (
-    <div>
-  <Link to="/about" className="item">
-    About
-  </Link>
+    <footer id="site-footer">
+     <ul>
+     <li>
   <Link to="/contact" className="item">
     Contact
   </Link>
-
-
-</div>
+  </li>
+  </ul>
+</footer>
 )
 }
 

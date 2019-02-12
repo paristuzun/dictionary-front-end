@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Header from './components/Header'
 import PageContainer from './components/PageContainer'
 import SignUp from './components/SignUp'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 class App extends Component {
@@ -23,13 +24,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="ui container">
+      <div id="shaked-canvas-div">
+
       <Header />
       <Switch>
-      // about
-      // contact
+      <Route path="/Contact" component={Contact} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/login" component={Login} />
+
+        <Route path="/login" render={() => {
+            return <Login updateUser={this.updateUser} />
+        }} />
         <Route path="/" component={PageContainer} />
       </Switch>
       <Footer />

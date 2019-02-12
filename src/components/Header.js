@@ -18,10 +18,12 @@ componentDidMount() {
 
 render = () => {
   return (
-    <div className="ui container">
+    <div id="top-bar">
+     <div id="logo">
+       <a href="/">Dictionary</a>
+      </div>
     <Search />
     <Navbar />
-    <h3>Categories:</h3>
      <CategoryList
        width="five"
        categories={this.state.categories}

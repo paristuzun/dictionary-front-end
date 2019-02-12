@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Entry from './Entry'
 
 export default class TopicSpecs extends Component {
@@ -39,7 +38,6 @@ export default class TopicSpecs extends Component {
 	};
 
 	render() {
-		console.log(this.state.entries, "inside the render")
 		return (
 			<div className="ui fluid card">
 				<div className="content">

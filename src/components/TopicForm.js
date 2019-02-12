@@ -1,15 +1,14 @@
 import React from 'react';
 
 class TopicForm extends React.Component {
-
   state = {
-    title: '',
-    entry: '',
+  title: '',
+  entry: ''
   }
 
   saveTopic = (event) => {
     event.preventDefault()
-    fetch("http://localhost:3000/", {
+    fetch("http://localhost:3000/topics", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -17,36 +16,24 @@ class TopicForm extends React.Component {
       },
       body: JSON.stringify(this.state)
     }).then(res => res.json())
-    .then(topic => this.props.addCocktail(cocktail))
+    .then(topic => this.props.addTopic(topic))
   }
 
-
   render = () =>
-    <form class="wide column ui form" onSubmit={this.saveCocktail}>
-    <h2>Create a new cocktail</h2>
+    <form className="form" onSubmit={this.saveTopic}>
       <div class="field">
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Name"
-          onChange={(e) => this.setState({ name: e.target.value })} />
+        <label>Topic Title</label>
+        <input type="text" name="title" placeholder="Topic title"
+          onChange={(e) => this.setState({ title: e.target.value })} />
       </div>
       <div class="field">
-        <label>Description</label>
-        <input type="text" name="description" placeholder="cocktail description"
-          onChange={(e) => this.setState({ description: e.target.value })} />
+        <label>Entry</label>
+        <input type="text" name="entry" placeholder="Entry"
+          onChange={(e) => this.setState({ entry: e.target.value })} />
       </div>
-      <div class="field">
-        <label>Instructions</label>
-        <input type="text" name="instructions" placeholder="instructions"
-          onChange={(e) => this.setState({ instructions: e.target.value })} />
-      </div>
-      <div class="field">
-        <label>Source</label>
-        <input type="text" name="source" placeholder="source"
-          onChange={(e) => this.setState({ source: e.target.value })} />
-      </div>
-      <button class="ui button" type="submit">Submit</button>
+      <button className="button" type="submit">Submit</button>
 
     </form>
 }
 
-export default CocktailForm;
+export default TopicForm;

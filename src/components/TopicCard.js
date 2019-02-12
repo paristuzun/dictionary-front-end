@@ -4,15 +4,16 @@ import Entry from './Entry'
 
 const TopicCard = props => {
 	return (
-		<div className="card">
-			<Link to={`/topics/${props.topic.id}`}>
-				<div className="content">
-					<div className="header">{props.topic.title}</div>
-					</div>
-				</Link>
-         {props.topic.entries.map(e => <Entry key={e.id} entry={e} />)}
 
-		</div>
-	);
+	<div className="card">
+		<Link to={`/topics/${props.topic.id}`}>
+
+			<h1 id="title">{props.topic.title}</h1>
+
+			</Link>
+			 {props.topic.entries.map(e => <Entry key={e.id} entry={e} />)}
+
+	</div>
+);
 };
 export default TopicCard;

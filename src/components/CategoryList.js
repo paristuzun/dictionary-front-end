@@ -3,12 +3,12 @@ import CategoryListItem from './CategoryListItem';
 
 const CategoryList = (props) => {
   return (
-    <div className={`ui ${props.width} wide column`}>
+    <nav id="sub-navigation">
       <ul className="ui list">
         {props.categories.map(cat => <CategoryListItem key={cat.id} category={cat} selectCategory={props.selectCategory} />)}
 
       </ul>
-    </div>
+    </nav>
   )
 }
 

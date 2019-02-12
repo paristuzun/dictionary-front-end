@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const TopicListItem = (props) => {
+const Profile = (props) => {
   return (
     <li>
-    <Link to={`/topics/${props.topic.slug}`} className="item">
+    <Link to={`/profile/${props.user.id}`}>
       <div className="content">
-        {props.topic.title}
+        {props.user.username}
+        {props.user.entries}
       </div>
     </Link>
     </li>
-
   )
 }
 
-export default TopicListItem;
+export default Profile;

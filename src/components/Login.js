@@ -22,18 +22,18 @@ class Login extends Component {
   render() {
     console.log(this.props)
     return (
-      <form class="ui form" onSubmit={this.handleSubmit}>
-        <div class="field">
+      <form className="ui form" onSubmit={this.handleSubmit}>
+        <div className="field">
           <label>Username</label>
           <input type="text" name="username" placeholder="Username"
             onChange={(e) => this.setState({ username: e.target.value })} />
         </div>
-        <div class="field">
+        <div className="field">
           <label>Password</label>
           <input type="password" name="password" placeholder="Password"
             onChange={(e) => this.setState({ password: e.target.value })} />
         </div>
-        <button class="ui button" type="submit">Submit</button>
+        <button className="ui button" type="submit">Submit</button>
       </form>
     )
   }

@@ -1,16 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import TopicCard from './TopicCard';
 
-const TopicContainer = (props) => {
-  return (
-    <div className={`ui card ten wide column`}>
-      <div className="ui list">
-        {props.topics.map(x => <TopicCard key={x.id} topic={x} selectTopic={props.selectTopic} />)}
+export default class TopicContainer extends Component {
 
-      </div>
-    </div>
-  )
+  generateCards() {
+    return this.props.topics.map(t => <TopicCard key={t.id} topic={t} />);
+  }
+
+  render = () => {
+    return (
+        <div id="main">
+         <div id="content" className="instapaper-body" role="main">
+           <section id="content-body">
+              {this.generateCards()}
+            </section>
+        </div>
+        </div>
+    )
+  }
+
 }
-
-export default TopicContainer;
