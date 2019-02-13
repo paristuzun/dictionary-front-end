@@ -5,11 +5,12 @@ class TopicForm extends React.Component {
   state = {
   title: '',
   entry: '',
-  category_id: [],
-  redirect: false
+  category_id: []
+  // redirect: false
   }
 
   saveTopic = (event) => {
+    console.log("saving topic")
     event.preventDefault()
     fetch("http://localhost:3000/topics", {
       method: "POST",
@@ -21,19 +22,23 @@ class TopicForm extends React.Component {
       body: JSON.stringify(this.state)
     }).then(res => res.json())
     .then(topic => this.props.addTopic(topic))
+    // .then(() => this.props.history.push("/"))
   }
 
-   setRedirect = () => {
-     this.setState({
-       redirect: true
-     })
-   }
+   // setRedirect = () => {
+   //   console.log("setting redirect")
+   //
+   //   this.setState({
+   //     redirect: true
+   //   })
+   // }
 
-   renderRedirect = () => {
-     if (this.state.redirect) {
-       return <Redirect to='/' />
-     }
-   }
+   // renderRedirect = () => {
+   //   console.log("rendering redirect")
+   //   if (this.state.redirect) {
+   //     return <Redirect to='/' />
+   //   }
+   // }
 
    render = () =>
     <form className="form" onSubmit={this.saveTopic}>
@@ -41,10 +46,10 @@ class TopicForm extends React.Component {
         <label>Topic Title</label>
         <input type="text" name="title" placeholder="Topic title"
           onChange={(e) => this.setState({ title: e.target.value })} />
-        {this.renderRedirect()}
+        
       </div>
 
-      <button className="button" type="submit" onClick={this.setRedirect}>Submit</button>
+      <button className="button" type="submit">Submit</button>
 
     </form>
 }
