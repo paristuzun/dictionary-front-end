@@ -47,7 +47,7 @@ export default class PageContainer extends Component {
 					path="/category/:id"
 					render={() => (
 					<TopicList
-						topics={this.topic.categories}
+						topics={this.state.topic.categories}
 						toggleForm={this.showForm}
 					 />
 					)}

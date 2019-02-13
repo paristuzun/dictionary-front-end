@@ -47,7 +47,9 @@ export default class TopicSpecs extends Component {
 			<div className="ui fluid card">
 				<div className="content">
 					<i className={this.favIconClass()} onClick={this.toggleFav} />
-					<div className="header">{this.state.title}</div>
+					<a href="#">
+					 <h1 id="title">{this.state.title}</h1>
+					 </a>
 					<div className="description">
 						<i className="triangle right icon" />
 						{ this.state.entries ? this.generateEntries() : null}

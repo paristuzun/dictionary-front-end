@@ -6,6 +6,7 @@ class TopicForm extends React.Component {
   title: '',
   entry: '',
   category_id: []
+  // redirect: false
   }
 
   saveTopic = (event) => {
@@ -20,12 +21,11 @@ class TopicForm extends React.Component {
       },
       body: JSON.stringify(this.state)
     }).then(res => res.json())
-    .then(topic => {
-      this.props.addTopic(topic);
-      return topic
-    })
-    .then((topic) => this.props.routeProps.history.push(`/topics/${topic.id}`))
+    .then(topic => this.props.addTopic(topic))
+    // .then(() => this.props.history.push("/"))
   }
+
+  
 
    render = () =>
     <form className="form" onSubmit={this.saveTopic}>

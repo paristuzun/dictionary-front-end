@@ -24,11 +24,11 @@ render = () => {
       </div>
     <Search />
     <Navbar logout={this.props.logout}/>
-     <CategoryList
+     {/*<CategoryList
        width="five"
        categories={this.state.categories}
        selectCategory={this.selectCategory}
-     />
+     />*/}
   </div>
   )
 }

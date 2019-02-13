@@ -1,28 +1,3 @@
-/* body,
-.ui.input>input,
-.ui.card, .ui.cards>.card {
-  background-color: #2d2d2d;
-  color: #bdbdbd;
-}
-
-.ui.list .list>a.item,
-.ui.list>a.item {
-  color: #bdbdbd;
-}
-
-.ui.card, .ui.cards>.card {
-  border-radius: 0;
-    border: none;
-    box-shadow: none;
-    border-right: 1px solid #bdbdbd;
-}
-
-.topic.item {
-  padding: 1rem 0;
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-} */
-
 html,
 body,
 div,
@@ -127,7 +102,8 @@ section {
 }
 
 body {
-    line-height: 1
+    line-height: 1;
+    background-color: #1d1d1d;
 }
 
 ul {
@@ -932,10 +908,6 @@ only screen and (max-width:850px) {
     #site-footer {
         margin-left: 0
     }
-}
-
-body {
-    background-color: #2d2d2d
 }
 
 a {
@@ -1792,7 +1764,7 @@ button.primary.focus,
 input[type=submit].primary.focus,
 input[type=button].primary.focus {
     color: #e0e0e0;
-    background-color: #68a138;
+    /* background-color: #68a138; */
     border-color: #1f3010
 }
 
@@ -2317,7 +2289,7 @@ only screen and (max-width:320px) {
 }
 
 .editform {
-    background-color: #1f1f1f
+    background-color: #141414;
 }
 
 .editform fieldset {
@@ -3263,7 +3235,6 @@ only screen and (max-width:850px) {
 }
 
 #top-navigation>ul>li>a {
-    color: #333;
     display: inline-block;
     padding: 0 10px;
     height: 29px;
@@ -8402,4 +8373,9 @@ fieldset[disabled] .btn-facebook.focus {
 
 #content-body .card a:hover {
   text-decoration: underline;
+}
+
+#entry-item-list .content li {
+  max-width: 650px;
+  margin: 0 auto;
 }
