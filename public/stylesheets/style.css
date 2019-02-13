@@ -3024,7 +3024,10 @@ body.theme-enabled>header {
 }
 
 #top-bar {
-    position: relative
+    position: relative;
+    position: relative;
+    padding: 2em 0 0 2em;
+    border-bottom: 1px solid #555;
 }
 
 #top-bar input,
@@ -3096,7 +3099,7 @@ body.theme-enabled>header {
     background-position: 10px 50%;
     background-size: 129px 40px;
     background-repeat: no-repeat;
-    text-indent: -119988px
+    font-size: 1.2em;
 }
 
 @media handheld,
@@ -5110,8 +5113,6 @@ html.no-touch sup.ab a:after {
     border: 0;
     padding-left: 7px;
     font-size: 20.16px;
-    max-width: 650px;
-    margin: 0 auto;
 }
 
 .related-titles a.more-data:hover {
@@ -5120,7 +5121,9 @@ html.no-touch sup.ab a:after {
 }
 
 .entry-edit-form-container {
-    padding-top: 10px
+    padding-top: 10px;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 #topic-channel-suggestion-menu {
