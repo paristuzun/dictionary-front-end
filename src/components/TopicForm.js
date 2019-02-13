@@ -1,10 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 class TopicForm extends React.Component {
   state = {
   title: '',
   entry: '',
   category_id: [],
+  redirect: false
   }
 
   saveTopic = (event) => {
@@ -17,24 +19,32 @@ class TopicForm extends React.Component {
 
       },
       body: JSON.stringify(this.state)
-      // body: JSON.stringify({
-      //   title: this.state.title.trim(),
-      //   entry: this.state.entry.trim()
-      // })
     }).then(res => res.json())
     .then(topic => this.props.addTopic(topic))
-
   }
 
-  render = () =>
+   setRedirect = () => {
+     this.setState({
+       redirect: true
+     })
+   }
+
+   renderRedirect = () => {
+     if (this.state.redirect) {
+       return <Redirect to='/' />
+     }
+   }
+
+   render = () =>
     <form className="form" onSubmit={this.saveTopic}>
       <div class="field">
         <label>Topic Title</label>
         <input type="text" name="title" placeholder="Topic title"
           onChange={(e) => this.setState({ title: e.target.value })} />
+        {this.renderRedirect()}
       </div>
 
-      <button className="button" type="submit">Submit</button>
+      <button className="button" type="submit" onClick={this.setRedirect}>Submit</button>
 
     </form>
 }

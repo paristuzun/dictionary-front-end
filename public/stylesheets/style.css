@@ -8395,3 +8395,11 @@ fieldset[disabled] .btn-facebook.focus {
 #message-report-form .field-validation-error {
     clear: right
 }
+
+.instapaper-body {
+  padding-top: 30px;
+}
+
+#content-body .card a:hover {
+  text-decoration: underline;
+}

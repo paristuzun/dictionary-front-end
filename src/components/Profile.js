@@ -1,17 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-const Profile = (props) => {
-  return (
-    <li>
-    <Link to={`/profile/${props.user.id}`}>
-      <div className="content">
-        {props.user.username}
-        {props.user.entries}
-      </div>
-    </Link>
-    </li>
-  )
+export default class PageContainer extends Component{
+
+  render() {
+    return (
+      <div>
+          {this.props.user.username}
+            {this.props.user.topics}
+            {this.props.user.entries}
+        </div>
+    );
+  }
 }
-
-export default Profile;

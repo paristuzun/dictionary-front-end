@@ -5,6 +5,7 @@ import TopicContainer from './TopicContainer'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import TopicForm from './TopicForm'
 import TopicCard from './TopicCard'
+import Profile from './Profile'
 import { getTopics } from '../services/Backend'
 
 export default class PageContainer extends Component {
@@ -40,17 +41,29 @@ export default class PageContainer extends Component {
     return (
 			<Router>
       <div className="container">
+			<Switch>
 			<Route
 					exact
-					path="/"
+					path="/category/:id"
 					render={() => (
 					<TopicList
-						topics={this.state.topics}
+						topics={this.topic.categories}
 						toggleForm={this.showForm}
 					 />
 					)}
 				/>
-
+				<Route
+						exact
+						path="/"
+						render={() => (
+						<TopicList
+							topics={this.state.topics}
+							toggleForm={this.showForm}
+						 />
+						)}
+					/>
+				</Switch>
+        <Route exact path="/profile" component={Profile} />
 				<Route
 						exact
 						path="/"
@@ -62,18 +75,13 @@ export default class PageContainer extends Component {
 						)}
 					/>
 
-								<Switch>
-
-
-
-				          <Route path="/topics/new" render={() => (
-				            localStorage.getItem("username") ? (
-				              <TopicForm addTopic={this.addTopic} />
-				            ) : <Redirect to="/login" />
-				          )} />
-
-
-									<Route
+					<Switch>
+				    <Route path="/topics/new" render={() => (
+				      localStorage.getItem("username") ? (
+				      <TopicForm addTopic={this.addTopic} />
+				      ) : <Redirect to="/login" />
+				    )} />
+					<Route
 											exact
 											path="/topics/:id"
 											render={renderProps => (
