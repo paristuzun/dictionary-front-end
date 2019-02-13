@@ -648,6 +648,10 @@ html.no-touch #index-section {
     height: 100%
 }
 
+#content-body .card {
+  margin-bottom: 4.2em;
+}
+
 #main {
     margin-left: 245px
 }
