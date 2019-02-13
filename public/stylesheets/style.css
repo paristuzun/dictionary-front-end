@@ -634,7 +634,7 @@ html.no-touch #index-section {
     width: 100%;
     max-width: 1240px;
     margin: 0 auto;
-    padding-top: 20px
+    padding: 1.4em;
 }
 
 #overlay {
