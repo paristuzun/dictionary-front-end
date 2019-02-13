@@ -6,7 +6,6 @@ class TopicForm extends React.Component {
   title: '',
   entry: '',
   category_id: []
-  // redirect: false
   }
 
   saveTopic = (event) => {
@@ -21,24 +20,12 @@ class TopicForm extends React.Component {
       },
       body: JSON.stringify(this.state)
     }).then(res => res.json())
-    .then(topic => this.props.addTopic(topic))
-    // .then(() => this.props.history.push("/"))
+    .then(topic => {
+      this.props.addTopic(topic);
+      return topic
+    })
+    .then((topic) => this.props.routeProps.history.push(`/topics/${topic.id}`))
   }
-
-   // setRedirect = () => {
-   //   console.log("setting redirect")
-   //
-   //   this.setState({
-   //     redirect: true
-   //   })
-   // }
-
-   // renderRedirect = () => {
-   //   console.log("rendering redirect")
-   //   if (this.state.redirect) {
-   //     return <Redirect to='/' />
-   //   }
-   // }
 
    render = () =>
     <form className="form" onSubmit={this.saveTopic}>
@@ -46,7 +33,7 @@ class TopicForm extends React.Component {
         <label>Topic Title</label>
         <input type="text" name="title" placeholder="Topic title"
           onChange={(e) => this.setState({ title: e.target.value })} />
-        
+
       </div>
 
       <button className="button" type="submit">Submit</button>

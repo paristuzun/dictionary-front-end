@@ -76,9 +76,9 @@ export default class PageContainer extends Component {
 					/>
 
 					<Switch>
-				    <Route path="/topics/new" render={() => (
+				    <Route path="/topics/new" render={(props) => (
 				      localStorage.getItem("username") ? (
-				      <TopicForm addTopic={this.addTopic} />
+				      <TopicForm routeProps={props} addTopic={this.addTopic} />
 				      ) : <Redirect to="/login" />
 				    )} />
 					<Route
