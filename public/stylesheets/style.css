@@ -508,6 +508,11 @@ h1 {
     margin-bottom: 10px
 }
 
+h1#title {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
 h2 {
     font-size: 20px;
     margin-bottom: 8px;
@@ -844,6 +849,14 @@ only screen and (max-width:414px) {
     #site-footer {
         margin-left: 10px
     }
+}
+
+#top-bar {
+  height: 100px;
+}
+
+.ui.fluid.card {
+  max-width: 800px;
 }
 
 @media handheld,
@@ -3077,7 +3090,7 @@ body.theme-enabled>header {
     display: block;
     margin: 0;
     padding: 0;
-    color: #green;
+    color: #81c14b;
     height: 60px;
     line-height: 60px;
     background-position: 10px 50%;
@@ -5096,7 +5109,9 @@ html.no-touch sup.ab a:after {
     display: inline;
     border: 0;
     padding-left: 7px;
-    font-size: 20.16px
+    font-size: 20.16px;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 .related-titles a.more-data:hover {
