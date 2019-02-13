@@ -12,7 +12,7 @@ class TopicForm extends React.Component {
   saveTopic = (event) => {
     console.log("saving topic")
     event.preventDefault()
-    fetch("http://localhost:3000/topics", {
+    fetch("http://murmuring-scrubland-52560.herokuapp.com/topics", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,4 +1,4 @@
-const API = "http://localhost:3000"
+const API = "http://murmuring-scrubland-52560.herokuapp.com"
 
 export function createUser(userData) {
   return fetch(`${API}/users`, {

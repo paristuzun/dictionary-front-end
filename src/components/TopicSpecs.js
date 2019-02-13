@@ -10,7 +10,7 @@ export default class TopicSpecs extends Component {
 
 	componentDidMount() {
 		fetch(
-			`http://localhost:3000/topics/${this.props.match.params.id}`
+			`http://murmuring-scrubland-52560.herokuapp.com/topics/${this.props.match.params.id}`
 		)
 			.then(res => res.json())
 			.then(topic =>
