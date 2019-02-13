@@ -3077,7 +3077,7 @@ body.theme-enabled>header {
     display: block;
     margin: 0;
     padding: 0;
-    background-image: url('../img/new-design/eksisozluk_logo_darktheme.svg');
+    color: #green;
     height: 60px;
     line-height: 60px;
     background-position: 10px 50%;
