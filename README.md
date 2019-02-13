@@ -7,7 +7,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://murmuring-scrubland-52560.herokuapp.com](http://murmuring-scrubland-52560.herokuapp.com) to view it in the browser.
+Open [https://murmuring-scrubland-52560.herokuapp.com](https://murmuring-scrubland-52560.herokuapp.com) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.

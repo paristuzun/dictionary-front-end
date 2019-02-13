@@ -10,7 +10,7 @@ state = {
 }
 
 componentDidMount() {
-  fetch('http://murmuring-scrubland-52560.herokuapp.com/categories')
+  fetch('https://murmuring-scrubland-52560.herokuapp.com/categories')
     .then(res => res.json())
     .then(categories => this.setState({ categories }));
 }

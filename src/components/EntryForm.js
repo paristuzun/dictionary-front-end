@@ -11,7 +11,7 @@ class EntryForm extends React.Component {
   saveEntry= (event) => {
     event.preventDefault()
     fetch(
-  			`http://murmuring-scrubland-52560.herokuapp.com/topics/${this.props.topicId}/entries`,
+  			`https://murmuring-scrubland-52560.herokuapp.com/topics/${this.props.topicId}/entries`,
   		 {
       method: "POST",
       headers: {
